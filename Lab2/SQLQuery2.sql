@@ -1,4 +1,4 @@
-/* Найти количество нулевых значений веса из таблицы Production.Product. */
+п»ї/* РќР°Р№С‚Рё РєРѕР»РёС‡РµСЃС‚РІРѕ РЅСѓР»РµРІС‹С… Р·РЅР°С‡РµРЅРёР№ РІРµСЃР° РёР· С‚Р°Р±Р»РёС†С‹ Production.Product. */
 
 SELECT COUNT(ISNULL([Weight],0)) AS NullWeight
 FROM Production.Product

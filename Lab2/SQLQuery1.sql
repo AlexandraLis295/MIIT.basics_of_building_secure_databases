@@ -1,4 +1,4 @@
-/* Найти максимальную дату рождения из таблицы HumanResources.Employee. */
+п»ї/* РќР°Р№С‚Рё РјР°РєСЃРёРјР°Р»СЊРЅСѓСЋ РґР°С‚Сѓ СЂРѕР¶РґРµРЅРёСЏ РёР· С‚Р°Р±Р»РёС†С‹ HumanResources.Employee. */
 
 SELECT MAX(BirthDate) as MaxBirthDate
 FROM HumanResources.Employee

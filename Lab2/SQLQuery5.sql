@@ -1,5 +1,5 @@
-/* Вывести EmployeeID, ShipDate и минимум по SubTotal для всевозможных EmployeeID с одинаковой ShipDate, 
-предусмотреть вывод самого минимального StandardPrice за определнный ShipDate из таблицы Purchasing.PurchaseOrderHeader. (Использовать CUBE) */
+п»ї/* Р’С‹РІРµСЃС‚Рё EmployeeID, ShipDate Рё РјРёРЅРёРјСѓРј РїРѕ SubTotal РґР»СЏ РІСЃРµРІРѕР·РјРѕР¶РЅС‹С… EmployeeID СЃ РѕРґРёРЅР°РєРѕРІРѕР№ ShipDate, 
+РїСЂРµРґСѓСЃРјРѕС‚СЂРµС‚СЊ РІС‹РІРѕРґ СЃР°РјРѕРіРѕ РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ StandardPrice Р·Р° РѕРїСЂРµРґРµР»РЅРЅС‹Р№ ShipDate РёР· С‚Р°Р±Р»РёС†С‹ Purchasing.PurchaseOrderHeader. (РСЃРїРѕР»СЊР·РѕРІР°С‚СЊ CUBE) */
 
 SELECT EmployeeID
 , ShipDate
@@ -7,5 +7,5 @@ SELECT EmployeeID
 FROM Purchasing.PurchaseOrderHeader
 GROUP BY CUBE(EmployeeID, ShipDate)
 
-/* Обсуждала это задание с Дмитрием, выяснила, что он здесь имел ввиду для каждого EmployeeID, 
-у которого одинаковый ShipDate для этого ShipDate выводить минимальный StandardPrice */
+/* РћР±СЃСѓР¶РґР°Р»Р° СЌС‚Рѕ Р·Р°РґР°РЅРёРµ СЃ Р”РјРёС‚СЂРёРµРј, РІС‹СЏСЃРЅРёР»Р°, С‡С‚Рѕ РѕРЅ Р·РґРµСЃСЊ РёРјРµР» РІРІРёРґСѓ РґР»СЏ РєР°Р¶РґРѕРіРѕ EmployeeID, 
+Сѓ РєРѕС‚РѕСЂРѕРіРѕ РѕРґРёРЅР°РєРѕРІС‹Р№ ShipDate РґР»СЏ СЌС‚РѕРіРѕ ShipDate РІС‹РІРѕРґРёС‚СЊ РјРёРЅРёРјР°Р»СЊРЅС‹Р№ StandardPrice */
