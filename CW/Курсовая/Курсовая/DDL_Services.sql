@@ -1,4 +1,4 @@
 CREATE TABLE Services
 (ID INT PRIMARY KEY,
-ServiceName NVARCHAR(20),
+ServiceName NVARCHAR(20) UNIQUE,
 Price MONEY)

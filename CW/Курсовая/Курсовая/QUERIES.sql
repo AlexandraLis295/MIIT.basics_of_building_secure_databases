@@ -1,7 +1,7 @@
-/* 1.	Показывать список услуг */
+п»ї/* 1.	РџРѕРєР°Р·С‹РІР°С‚СЊ СЃРїРёСЃРѕРє СѓСЃР»СѓРі */
 SELECT * FROM Services
 
-/* 2.	Показывать список тарифов и цену за единицу услуги */
+/* 2.	РџРѕРєР°Р·С‹РІР°С‚СЊ СЃРїРёСЃРѕРє С‚Р°СЂРёС„РѕРІ Рё С†РµРЅСѓ Р·Р° РµРґРёРЅРёС†Сѓ СѓСЃР»СѓРіРё */
 SELECT T1.TariffName, SUM(S.Price) AS Price
 FROM Tariffs AS T1
 INNER JOIN Tariffs_Services AS T2
@@ -10,16 +10,16 @@ INNER JOIN Services AS S
 ON T2.ID_Service=S.ID
 GROUP BY T1.TariffName
 
-/* 3.	Показывать список абонентов по данному тарифу */
+/* 3.	РџРѕРєР°Р·С‹РІР°С‚СЊ СЃРїРёСЃРѕРє Р°Р±РѕРЅРµРЅС‚РѕРІ РїРѕ РґР°РЅРЅРѕРјСѓ С‚Р°СЂРёС„Сѓ */
 SELECT FullName, TariffName
 FROM Subcribers AS S
 INNER JOIN PhoneNumbers AS P
 ON S.ID=P.ID_Subcriber
 INNER JOIN Tariffs AS T
 ON P.ID_Tariff=T.ID
-WHERE TariffName='Стандартный'
+WHERE TariffName='РЎС‚Р°РЅРґР°СЂС‚РЅС‹Р№'
 
-/* 4.	Показывать список самых распространенных тарифов */
+/* 4.	РџРѕРєР°Р·С‹РІР°С‚СЊ СЃРїРёСЃРѕРє СЃР°РјС‹С… СЂР°СЃРїСЂРѕСЃС‚СЂР°РЅРµРЅРЅС‹С… С‚Р°СЂРёС„РѕРІ */
 SELECT TariffName, COUNT(ID_Tariff) AS Quantity
 FROM PhoneNumbers AS P
 INNER JOIN Tariffs AS T
@@ -27,7 +27,7 @@ ON P.ID_Tariff=T.ID
 GROUP BY TariffName
 ORDER BY Quantity DESC
 
-/* 5.	Показывать процентное распределение тарифов среди абонентов */
+/* 5.	РџРѕРєР°Р·С‹РІР°С‚СЊ РїСЂРѕС†РµРЅС‚РЅРѕРµ СЂР°СЃРїСЂРµРґРµР»РµРЅРёРµ С‚Р°СЂРёС„РѕРІ СЃСЂРµРґРё Р°Р±РѕРЅРµРЅС‚РѕРІ */
 SELECT TariffName,
 	(100*COUNT(ID_Tariff)/(SELECT COUNT(*) FROM PhoneNumbers)) AS [Percent]
 FROM PhoneNumbers AS P
