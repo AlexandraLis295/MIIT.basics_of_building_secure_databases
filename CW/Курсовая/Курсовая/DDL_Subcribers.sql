@@ -1,0 +1,4 @@
+CREATE TABLE Subcribers
+(ID INT PRIMARY KEY,
+FullName NVARCHAR(50),
+BirthDate DATE)
